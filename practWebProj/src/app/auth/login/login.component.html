@@ -1,0 +1,93 @@
+
+<div class="container mt-5">
+
+    <!-- Active User Status -->
+    <div *ngIf="isActive$() === 'active'; else inactiveUser">
+      <h1 class="text-success text-center">You are an Active User!</h1>
+    </div>
+    <ng-template #inactiveUser>
+      <h1 class="text-danger text-center bg-secondary">You are an Inactive User!</h1>
+    </ng-template>
+  
+    <!-- Login Form -->
+    <form (ngSubmit)="onSubmit()" class="form">
+      <div class="form-group p-1">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="email"
+          class="form-control"
+          required
+          placeholder="Enter your email"
+        />
+      </div>
+
+      <div class="form-group p-1">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          class="form-control"
+          required
+          placeholder="Enter your password"
+        />
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="row">
+        <!-- Login Button -->
+        <div class="form-group p-3 col-auto">
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+  
+        <!-- Admin Message -->
+        <div class="form-group p-3 col-auto" *ngIf="isAdmin">
+          <h2 class="text-info">You are an Admin!</h2>
+        </div>
+  
+        <!-- Logout Button -->
+        <div class="form-group p-3 col-auto">
+          <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+        </div>
+      </div>
+    </form>
+
+
+    <!-- <div>
+        <ng-select placeholder="select country" [items]="countryList" [clearable]="false" [selectOnTab]="true" [loading]="!countryList?.length">
+            
+        </ng-select>
+    </div> -->
+</div>
+  
+<div class="row">
+
+        <div class="col-1 bg-secondary">
+            <h2>col-1 new</h2>
+        </div>
+
+        <div class="col-2 bg-primary">
+            <h2>col-2</h2>
+        </div>
+
+        <div class="col-3 bg-secondary">
+            <h2>col-3</h2>
+        </div>
+
+        <div class="col-4 bg-primary">
+            <h2>col-4</h2>
+        </div>  
+
+        <div class="col-2 bg-secondary">
+            <h2>col-5</h2>
+        </div>  
+
+</div>
+
+
+
+<a appPreventForward href="https://www.google.com" class="btn btn-primary d-flex justify-content-center mt-5">Google Link</a>

@@ -1,0 +1,40 @@
+<div class="container text-center mt-5">
+    <header class="mb-4">
+      <h1>Welcome to Our Website!</h1>
+      <p class="text-muted">Your journey to explore amazing content starts here.</p>
+    </header>
+    <!-- Carousel -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+        <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let image of images; let i = index" [class.active]="i === 0">
+            <img [src]="image" class="d-block w-100" alt="Slide {{ i + 1 }}" />
+        </div>
+        </div>
+        <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
+        >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
+        >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    
+  
+    <!-- Buttons -->
+    <div class="mt-5">
+      <button class="btn btn-primary" routerLink="/directive-prac">Directive Practice</button>
+      <button class="btn btn-primary ms-2" routerLink="/login">Login</button>
+    </div>
+  </div>
+  
