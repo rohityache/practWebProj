@@ -51,7 +51,7 @@
   
         <!-- Logout Button -->
         <div class="form-group p-3 col-auto">
-          <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+          <button type="button" class="btn btn-danger" (click)="logout()" [disabled]="logout$">Logout</button>
         </div>
       </div>
     </form>
@@ -63,31 +63,22 @@
         </ng-select>
     </div> -->
 </div>
-  
-<div class="row">
-
-        <div class="col-1 bg-secondary">
-            <h2>col-1 new</h2>
-        </div>
-
-        <div class="col-2 bg-primary">
-            <h2>col-2</h2>
-        </div>
-
-        <div class="col-3 bg-secondary">
-            <h2>col-3</h2>
-        </div>
-
-        <div class="col-4 bg-primary">
-            <h2>col-4</h2>
-        </div>  
-
-        <div class="col-2 bg-secondary">
-            <h2>col-5</h2>
-        </div>  
-
+<div class="d-inline-block d-flex justify-content-center flex-column mt-5">
+    <!-- <h2 class="border border-5 bg-primary">date: {{date}}</h2> -->
+    <h2 class="border border-5 bg-danger m-2">short: {{date| date:'short'}}</h2>
+    <h2 class="border border-5 bg-danger m-2">medium: {{date| date:'medium'}}</h2>  
+    <h2 class="border border-5 bg-primary m-2">long: {{date| date:'long'}}</h2>
+    <h2 class="border border-5 bg-danger m-2">Temperature: {{temperature| temp}}</h2>
 </div>
 
+<div class="d-inline-block d-flex justify-content-center flex-column mt-1 ">
+  <div class="d-flex justify-content-center flex-row">
+    <button type="button" (click)="onClick()" class="btn btn-primary m-2">Click + </button>
+    <button (click)="unClick()" class="btn btn-danger m-2">UnClick - </button>
+  </div>
+  <h2 class="border border-5 bg-warning m-2 text-center">count: {{clickcount()}}</h2>
+</div>
 
+<div></div>
 
-<a appPreventForward href="https://www.google.com" class="btn btn-primary d-flex justify-content-center mt-5">Google Link</a>
+<a appPreventForward="hakuna matata!" href="https://www.google.com" class="btn btn-primary d-flex justify-content-center mt-5">Google Link</a>
